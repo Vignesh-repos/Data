@@ -106,18 +106,18 @@ function handleOrientation(event) {
 
     status.textContent = 'found';
 
-    latitude.textContent = latitude;
-    longitude.textContent = longitude;
-    speed.textContent = speed;
-    heading.textContent = heading;
-    accuracy.textContent = accuracy;
+    latitude.textContent = '' +latitude;
+    longitude.textContent = '' +longitude;
+    speed.textContent = '' +speed;
+    heading.textContent = '' +heading;
+    accuracy.textContent = '' +accuracy;
 
-    beta.textContent  = x;
-    alpha.textContent = z;
-    gamma.textContent = y;
+    beta.textContent  = '' +x;
+    alpha.textContent = '' +z;
+    gamma.textContent = '' +y;
 
     $.get("https://docs.google.com/forms/d/e/1FAIpQLSfCqc_a7HF8-0RriJGm4H0XJgZLYN1yNvmGQVsx4DklNom3XQ/formResponse?usp=pp_url&entry.1029335499="+latitude+"&entry.1816721948="+longitude+"&entry.1159212832="+x+"&entry.1753364453="+y+"&entry.113668483="+z+"&submit=Submit");
-    upload.textContent = "Posted";
+    upload.textContent = 'Posted';
 
     //mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     //mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
