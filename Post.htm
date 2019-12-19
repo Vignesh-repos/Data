@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="/static/build/styles/samples.37902ba3b7fe.css" rel="stylesheet" type="text/css" />
+        
+        <style type="text/css">
+            .garden {
+  position: relative;
+  width : 200px;
+  height: 200px;
+  border: 5px solid #CCC;
+  border-radius: 10px;
+}
+
+.ball {
+  position: absolute;
+  top   : 90px;
+  left  : 90px;
+  width : 20px;
+  height: 20px;
+  background: green;
+  border-radius: 100%;
+}
+
+        </style>
+        
+        <title>Detecting device orientation - Orientation_example - code sample</title>
+    </head>
+    <body>
+        
+            <div class="garden">
+  <div class="ball"></div>
+</div>
+
+<pre class="output"></pre>
+
+<h1>Location Status:</h1>
+<p id = "status"></p>
+
+<h1>Alpha: </h1> 
+<p id = "alpha"></p>
+
+<h1>Beta: </h1>
+<p id = "beta"></p>
+
+<h1>Gamma: </h1>
+<p id = "gamma"></p>
+
+<h1>Latitude: </h1>
+<p id = "latitude"></p>
+
+<h1>Longitude: </h1>
+<p id = "longitude"></p>
+
+<h1>Speed: </h1>
+<p id = "speed"></p>
+
+<h1>Direction: </h1>
+<p id = "heading"></p>
+
+<h1>Accuracy: </h1>
+<p id = "accuracy"></p>
+
+<h1>Upload Status: </h1>
+<p id = "upload"></p>
+
+//<a id = "map-link" target="_blank"></a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+var ball   = document.querySelector('.ball');
+var garden = document.querySelector('.garden');
+var output = document.querySelector('.output');
+
+const status = document.querySelector('#status');
+const mapLink = document.querySelector('#map-link');
+//mapLink.href = '';
+//mapLink.textContent = '';
+
+var maxX = garden.clientWidth  - ball.clientWidth;
+var maxY = garden.clientHeight - ball.clientHeight;
+var options;
+
+function handleOrientation(event) {
+ 
+ output.innerHTML = "Orientation change"+"\n";
+
+ options = {
+       enableHighAccuracy: true,
+       timeout: 2,
+       maximumAge: 0
+ };
+
+
+ function success(position) {
+
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var speed     = position.coords.speed;
+    var heading   = position.coords.heading;
+    var accuracy  = position.coords.accuracy;
+
+    var x = event.beta;  // In degree in the range [-180,180]
+    var y = event.gamma; // In degree in the range [-90,90]
+    var z = event.alpha; // In degree in the range [-90,90]
+
+    status.textContent = 'found';
+
+    latitude.textContent = latitude;
+    longitude.textContent = longitude;
+    speed.textContent = speed;
+    heading.textContent = heading;
+    accuracy.textContent = accuracy;
+
+    beta.textContent  = x;
+    alpha.textContent = z;
+    gamma.textContent = y;
+
+    $.get("https://docs.google.com/forms/d/e/1FAIpQLSfCqc_a7HF8-0RriJGm4H0XJgZLYN1yNvmGQVsx4DklNom3XQ/formResponse?usp=pp_url&entry.1029335499="+latitude+"&entry.1816721948="+longitude+"&entry.1159212832="+x+"&entry.1753364453="+y+"&entry.113668483="+z+"&submit=Submit");
+    upload.textContent = "Posted";
+
+    //mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    //mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+
+    // Because we don't want to have the device upside down
+    // We constrain the x value to the range [-90,90]
+    if (x >  90) { x =  90};
+    if (x < -90) { x = -90};
+
+    // To make computation easier we shift the range of 
+    // x and y to [0,180]
+    x += 90;
+    y += 90;
+
+    // 10 is half the size of the ball
+    // It center the positioning point to the center of the ball
+    ball.style.top  = (maxY*y/180 - 10) + "px";
+    ball.style.left = (maxX*x/180 - 10) + "px";
+
+ }
+
+ function error() {
+    status.textContent = 'Unable to retrieve your location';
+ }
+
+   //Get current locations
+   var nav = navigator.geolocation.getCurrentPosition(success, error)
+   // var id = navigator.geolocation.watchPosition(success, error, options);
+
+}
+
+window.addEventListener('deviceorientation', handleOrientation);
+
+</script>
+        
+</body>
+</html>
