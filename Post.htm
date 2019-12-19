@@ -72,10 +72,11 @@ const speed = document.querySelector('#speed');
 var maxX = garden.clientWidth  - ball.clientWidth;
 var maxY = garden.clientHeight - ball.clientHeight;
 var options;
+var d = new Date();
 
 function handleOrientation(event) {
  
- output.innerHTML = "Orientation change"+"\n";
+ output.innerHTML = "Orientation change"+d+"\n";
 
  options = {
        enableHighAccuracy: true,
