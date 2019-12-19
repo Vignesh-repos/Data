@@ -48,11 +48,8 @@
 <h1>Gamma: </h1>
 <p id = "gamma"></p>
 
-<h1>Latitude: </h1>
-<p id = "latitude"></p>
-
-<h1>Longitude: </h1>
-<p id = "longitude"></p>
+<h1>GPS: </h1>
+<p id = "coords"></p>
 
 <h1>Speed: </h1>
 <p id = "speed"></p>
@@ -66,7 +63,7 @@
 <h1>Upload Status: </h1>
 <p id = "upload"></p>
 
-//<a id = "map-link" target="_blank"></a>
+<a id = "map-link" target="_blank"></a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 var ball   = document.querySelector('.ball');
@@ -106,16 +103,14 @@ function handleOrientation(event) {
     var z = event.alpha; // In degree in the range [-90,90]
 
     status.textContent = 'found';
+    beta.textContent  = '${x}';
+    alpha.textContent = '${z}';
+    gamma.textContent = '${y}';
 
-    latitude.textContent = '-' +latitude;
-    longitude.textContent = '-' +longitude;
-    speed.textContent = '-' +speed;
-    heading.textContent = '-' +heading;
-    accuracy.textContent = '-' +accuracy;
-
-    beta.textContent  = '' +x;
-    alpha.textContent = '' +z;
-    gamma.textContent = '' +y;
+    coords.textContent = 'Latitude: ${latitude} °, Longitude: ${longitude} °';
+    speed.textContent = '${speed}';
+    heading.textContent = '${heading}';
+    accuracy.textContent = '${accuracy}';
 
     $.get("https://docs.google.com/forms/d/e/1FAIpQLSfCqc_a7HF8-0RriJGm4H0XJgZLYN1yNvmGQVsx4DklNom3XQ/formResponse?usp=pp_url&entry.1029335499="+latitude+"&entry.1816721948="+longitude+"&entry.1159212832="+x+"&entry.1753364453="+y+"&entry.113668483="+z+"&submit=Submit");
     upload.textContent = 'Posted';
