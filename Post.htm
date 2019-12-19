@@ -102,7 +102,7 @@ function handleOrientation(event) {
 
     status.textContent = 'found @ '+gpstime;
     orient.textContent = 'Beta: '+x+ '°, Alpha: ' +z+' °, Gamma: ' +y+ ' °';
-    coords.textContent = 'Latitude: '+latitude+' °, Longitude: '+longitude+' °';
+    coords.textContent = 'Latitude: '+latitude.toFixed(6)+' °, Longitude: '+longitude.toFixed(6)+' °';
     //speed.textContent = 'Speed : '+speed+'km/h  Direction: '+heading+' Accuracy: '+accuracy;
 
     //$.get("https://docs.google.com/forms/d/e/1FAIpQLSfCqc_a7HF8-0RriJGm4H0XJgZLYN1yNvmGQVsx4DklNom3XQ/formResponse?usp=pp_url&entry.1029335499="+latitude+"&entry.1816721948="+longitude+"&entry.1159212832="+x+"&entry.1753364453="+y+"&entry.113668483="+z+"&submit=Submit");
