@@ -102,8 +102,8 @@ function handleOrientation(event) {
     var z = event.alpha; // In degree in the range [-90,90]
 
     status.textContent = 'found';
-    orient.textContent = 'Beta: ${x} °, Alpha: ${z} °, Gamma: ${y} °';
-    coords.textContent = 'Latitude: ${latitude} °, Longitude: ${longitude} °';
+    orient.textContent = 'Beta: '+x+ '°, Alpha: ' +z+' °, Gamma: ' +y+ ' °';
+    coords.textContent = 'Latitude: '+latitude+' °, Longitude: '+longitude+' °';
 
     //speed.textContent = '${speed}';
     //heading.textContent = '${heading}';
