@@ -89,6 +89,7 @@ function handleOrientation(event) {
 
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
+    var gpstime   = position.timestamp;
     //var speed     = position.coords.speed;
     //var heading   = position.coords.heading;
     //var accuracy  = position.coords.accuracy;
@@ -97,12 +98,12 @@ function handleOrientation(event) {
     var y = event.gamma; // In degree in the range [-90,90]
     var z = event.alpha; // In degree in the range [-90,90]
 
-    status.textContent = 'found';
+    status.textContent = 'found @ '+gpstime;
     orient.textContent = 'Beta: '+x+ '°, Alpha: ' +z+' °, Gamma: ' +y+ ' °';
     coords.textContent = 'Latitude: '+latitude+' °, Longitude: '+longitude+' °';
     //speed.textContent = 'Speed : '+speed+'km/h  Direction: '+heading+' Accuracy: '+accuracy;
 
-    $.get("https://docs.google.com/forms/d/e/1FAIpQLSfCqc_a7HF8-0RriJGm4H0XJgZLYN1yNvmGQVsx4DklNom3XQ/formResponse?usp=pp_url&entry.1029335499="+latitude+"&entry.1816721948="+longitude+"&entry.1159212832="+x+"&entry.1753364453="+y+"&entry.113668483="+z+"&submit=Submit");
+    //$.get("https://docs.google.com/forms/d/e/1FAIpQLSfCqc_a7HF8-0RriJGm4H0XJgZLYN1yNvmGQVsx4DklNom3XQ/formResponse?usp=pp_url&entry.1029335499="+latitude+"&entry.1816721948="+longitude+"&entry.1159212832="+x+"&entry.1753364453="+y+"&entry.113668483="+z+"&submit=Submit");
     upload.textContent = 'Posted';
 
     //mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
