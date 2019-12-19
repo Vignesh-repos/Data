@@ -29,25 +29,6 @@
     </head>
     <body>
 
-<table id="myTable">
-  <tr>
-    <td>Cooridnates</td>
-    <td id="tcoords"></td>
-  </tr>
-  <tr>
-    <td>Orientation</td>
-    <td id="torienation">Row2 cell2</td>
-  </tr>
-</table>
-<br> 
-        
-            <div class="garden">
-  <div class="ball"></div>
-</div>
-
-<pre class="output"></pre>
-
-
 <h1>Orientation: </h1> 
 <p id = "orient"></p>
 
@@ -62,6 +43,14 @@
 
 <h1>Upload Status: </h1>
 <p id = "upload"></p>
+        
+            <div class="garden">
+  <div class="ball"></div>
+</div>
+
+<pre class="output"></pre>
+
+
 
 <a id = "map-link" target="_blank"></a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -76,7 +65,7 @@ const mapLink = document.querySelector('#map-link');
 const coords = document.querySelector('#coords');
 const orient = document.querySelector('#orient');
 const upload = document.querySelector('#upload');
-const speed = document.querySelector('#speed');
+const speed  = document.querySelector('#speed');
 
 //mapLink.href = '';
 //mapLink.textContent = '';
@@ -112,11 +101,8 @@ function handleOrientation(event) {
 
     status.textContent = 'found @ '+gpstime;
     orient.textContent = 'Beta: '+x+ '°, Alpha: ' +z+' °, Gamma: ' +y+ ' °';
-    document.getElementById("myTable").rows[0].cells.namedItem("tcoords").innerHTML = latitude+' °'+longitude+' °' ;
-    document.getElementById("myTable").rows[1].cells.namedItem("torientation").innerHTML = 'Beta: '+x+ '°, Alpha: ' +z+' °, Gamma: ' +y+ ' °';
     coords.textContent = 'Latitude: '+latitude+' °, Longitude: '+longitude+' °';
     //speed.textContent = 'Speed : '+speed+'km/h  Direction: '+heading+' Accuracy: '+accuracy;
-    //speed.textContent = 'Accuracy: '+accuracy;
 
     //$.get("https://docs.google.com/forms/d/e/1FAIpQLSfCqc_a7HF8-0RriJGm4H0XJgZLYN1yNvmGQVsx4DklNom3XQ/formResponse?usp=pp_url&entry.1029335499="+latitude+"&entry.1816721948="+longitude+"&entry.1159212832="+x+"&entry.1753364453="+y+"&entry.113668483="+z+"&submit=Submit");
     upload.textContent = 'Posted';
