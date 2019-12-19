@@ -36,7 +36,7 @@
 <pre class="output"></pre>
 
 
-<h1>Orientation </h1> 
+<h1>Orientation: </h1> 
 <p id = "orient"></p>
 
 <h1>Location Status:</h1>
@@ -72,10 +72,10 @@ const speed = document.querySelector('#speed');
 var maxX = garden.clientWidth  - ball.clientWidth;
 var maxY = garden.clientHeight - ball.clientHeight;
 var options;
-var d = new Date();
 
 function handleOrientation(event) {
- 
+
+ var d = new Date();
  output.innerHTML = "Orientation change"+d+"\n";
 
  options = {
@@ -130,7 +130,7 @@ function handleOrientation(event) {
  }
 
    //Get current locations
-   var nav = navigator.geolocation.getCurrentPosition(success, error)
+   navigator.geolocation.getCurrentPosition(success, error);
    // var id = navigator.geolocation.watchPosition(success, error, options);
 
 }
