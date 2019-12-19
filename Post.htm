@@ -28,6 +28,18 @@
         <title>Detecting device orientation - Orientation_example - code sample</title>
     </head>
     <body>
+
+<table id="myTable">
+  <tr>
+    <td>Cooridnates</td>
+    <td id="tcoords"></td>
+  </tr>
+  <tr>
+    <td>Orientation</td>
+    <td id="torienation">Row2 cell2</td>
+  </tr>
+</table>
+<br> 
         
             <div class="garden">
   <div class="ball"></div>
@@ -100,6 +112,8 @@ function handleOrientation(event) {
 
     status.textContent = 'found @ '+gpstime;
     orient.textContent = 'Beta: '+x+ '°, Alpha: ' +z+' °, Gamma: ' +y+ ' °';
+    document.getElementById("myTable").rows[0].cells.namedItem("tcoords").innerHTML = latitude+' °'+longitude+' °' ;
+    document.getElementById("myTable").rows[1].cells.namedItem("torientation").innerHTML = 'Beta: '+x+ '°, Alpha: ' +z+' °, Gamma: ' +y+ ' °';
     coords.textContent = 'Latitude: '+latitude+' °, Longitude: '+longitude+' °';
     //speed.textContent = 'Speed : '+speed+'km/h  Direction: '+heading+' Accuracy: '+accuracy;
     speed.textContent = 'Accuracy: '+accuracy;
