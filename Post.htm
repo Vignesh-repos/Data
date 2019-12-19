@@ -81,7 +81,7 @@ function handleOrientation(event) {
  options = {
        enableHighAccuracy: true,
        timeout: 20,
-       maximumAge: 0
+       maximumAge: 6000000
  };
 
 
@@ -126,8 +126,17 @@ function handleOrientation(event) {
 
  }
 
- function error() {
-    status.textContent = 'Unable to retrieve your location';
+ function error(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED: status.textContent = "user did not share geolocation data";
+             break;
+        case error.POSITION_UNAVAILABLE: status.textContent = "could not detect current position";
+             break;
+        case error.TIMEOUT: status.textContent = "retrieving position timed out";
+             break;
+        default: status.textContent = "unknown error";
+             break;
+    //status.textContent = 'Unable to retrieve your location';
  }
 
    //Get current locations
