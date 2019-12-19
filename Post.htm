@@ -80,7 +80,7 @@ function handleOrientation(event) {
 
  options = {
        enableHighAccuracy: true,
-       timeout: 2,
+       timeout: 20,
        maximumAge: 0
  };
 
@@ -131,7 +131,8 @@ function handleOrientation(event) {
  }
 
    //Get current locations
-   navigator.geolocation.getCurrentPosition(success, error);
+   navigator.geolocation.getCurrentPosition(success, error,options);
+
    // var id = navigator.geolocation.watchPosition(success, error, options);
 
 }
