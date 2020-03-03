@@ -1,0 +1,88 @@
+Introduction
+Smartphone have become essential commodity worldwide and with ever increasing digital economy this trend is expected to grow further. Latest research report from Deloitte estimates that smartphone ownership has touched about 85% and grew at 3% over YOY across world. In India, the story is no different, and smartphone sales volumes has been higher with major players clocking more than 20% growth in their YOY sales. (Reference from IDC research). As the market matures, consumers have started looking for better hardware and premium features in their handsets. This has spiced up the premium segment in India, dominated by Apple and Samsung. Brands have been trying to gain fair share in this niche segment, by introducing high end phones. 
+ 
+Major Players in Premium Segment
+Apple
+Apple is credited as the brand for revolutionizing smart phone market with the introduction of iPhone back in 2007. It is one of the major players in premium smartphone market across world, consistently clocking higher sales, despite the maturing markets and other options from their competitors.  iOS is their proprietary OS used in their phones, and  it is continuously developed by Apple. It also enjoys a huge support base from app developers across world despite Android. Apple controls their APP ecosystem, through Play store with every app being vetted by their experts. Their security and stability has greater acceptance in fintech organizations and many support access to their critical data on IOS platform than Android. Recent GSMARENA poll found, Apple has highest brand loyalty in the market compared to than any other brand.
+ 
+Samsung
+Samsung entered smartphone market with the availability of open Android OS software. With innovation and rapid technological progress, they soon entered the premium segment with Galaxy S series. By reducing product launch times, they have flooded the market with high end hardware and better displays. Their high end hardware specifications along with full screen AMOLED display has increased their market share and posed heavy competition to Apple. To date, their edge and notch less displays have been emulated by many other manufacturers and brought in design innovations.  In India, they have consistently maintained their market share in premium segment and hold about 20 % share across segments.
+OnePlus
+OnePlus is a new entry that started as an alternative to expensive flagships of the likes of Apple and Samsung in 2014. Since then, they have consistently improved their offerings YOY and have now set their toes on premium segment with launch of OnePlus 7 series. OnePlus’s development of Oxygen OS is an interesting story, that came with legal restrictions on the usage of custom rom cyanogenMod. OnePlus has often been credited by experts for offering high-end hardware at competitive prices, and for providing greater value for money.
+To understand consumer’s preference, we conducted an independent poll to see the brand inclination. Our results aligned with poll’s above and found greater loyalty towards Apple.
+                                       
+Analysis of OnePlus share vs other Premium Smartphone brands
+OnePlus recently launched its 2 new phones, Oneplus 7 and Oneplus 7 Pro. It is touted to be Oneplus’s toehold into premium segment dominated by Samsung and Apple. Its launch prices were 33000 and 49000 Rs respectively in India. It’s price and higher end specifications have been raising the expectations and recent poll conducted by GSMARENA, had following results. 
+ 	Proportion
+Of intent to Buy	# Respondents
+OnePlus 7	0.6	5162
+Other Flagships	0.4	3479
+
+To Confirm, any impact to other smartphone brands, we decided to conduct hypotheses testing, 
+Ho: No Impact due to Oneplus                                   Ha : OnePlus is growing in Premium segment
+P-Value for difference is about 0.02143. Hence at 95% confidence level or at a significance level of 5%, we were able to reject the Null hypotheses and confirm their march in to premium segment.
+
+
+Analysis of Depreciation of Phone value by brand
+Apple 
+We tracked the Apple’s iPhones trade in values from the respective Apple US website and noticed that the depreciation cost to be the lowest.
+                  
+
+Samsung
+Samsung has a phone at every price segment, so far the purposes of comparison we have considered only their premium lineup of Galaxy series. The trend shows, there is a substantial drop in value of these phones compared to its leader Apple. 
+                       
+
+OnePlus 
+OnePlus phone’s until 2017 were only in mid range and only recently they have entered the premium segment. We tracked their trade in values from their US website and found substantial depreciation in their value, compared to Apple. 
+
+                          
+Analysis of Service Quality
+Oneplus in their 2018 annual report , had claimed that they had achieved 95% of customers gave a 10 for satisfaction rating from their service centers. It is very high rating for a company that is just celebrating its 5th anniversary. To validate this, we formulated the Null Hypotheses, as ratings as 4.75 (Ho). Alternate Hypotheses as rating as not 4.75 out of 5.  We then scraped the google reviews for Oneplus service centers across India, to see if it translates to their claim of 95% ratings.
+ 
+
+For the above centers, while evaluating we see the P-Value is very less. We can thus reject null Hypotheses and conclude the ratings of 95% is not translating to its center ratings and there could be some other variable in play, when evaluating service center compared to their actual service ratings.
+Analysis of Service Quality among important centers
+Next, We wanted to see if there was any variability in service quality among its centers. We again scraped few service center’s ratings from google maps. Ratings from our sample, revealed mostly left skewed distribution. To verify our initial claim, we then applied ANOVA, with Ho : mean ratings is same among all centers. Alternative Hypotheses Ha: Mean ratings is different for at least one center. 
+Anova: Single Factor						
+						
+SUMMARY						
+Groups	Count	Sum	Average	Variance		
+Chennai	160	753	4.70625	0.59870283		
+NewDelhi	160	727	4.54375	1.042099057		
+Hyderabad	160	660	4.125	1.468553459		
+Pune	30	136	4.533333	1.498850575		
+						
+						
+ANOVA						
+Source of Variation	SS	df	MS	F	P-value	F crit
+Between Groups	28.9379902	3	9.645997	9.074716994	7.33969E-06	2.622523
+Within Groups	537.8541667	506	1.062953			
+						
+Total	566.7921569	509	 	 	 	 
+
+As the p-value is very small, we can reject the Null Hypotheses, and recommend to check quality of service in their centers.
+To explain this variance, we ran several 2 sample POST HOC test, assuming equal variances on random samples of ratings from each center. 
+Summary of these tests Is below. We noticed the differences is mainly due to Hyderabad center. As the ratings at this center were low, and it is below 0.05 significance level, we recommend to check this center for any lapses in service quality.
+                      
+
+ 
+ 
+
+ 
+
+Analysis of critical smart phones feature 
+To analyze the critical feature most buyers seek, in their smartphone purchase, we conducted an independent survey. We chose participants randomly and first asked them, if there were going to make a purchase of smartphone above Rs 25000/- in next 18 months. If they answered yes, then we presented a list of features that were most important them in their next purchase. 
+               
+Our survey had 36 respondents with the feature -  Battery and charging time getting highest rank. We then took battery endurance tests table from GSMARENA. 
+Samsung 
+Galaxy S10	Apple
+Iphone XS Max	Oneplus
+7 Pro	Oneplus
+7 
+79	79	85	102
+
+Oneplus 7 had highest rating, followed by iPhone X series and Samsung Galaxy S10 series. Further, we mined the review data of OnePlus 7 Pro series from Amazon reviews. We tokenized the review corpus using TFIDF and analyzed the parameters that had higher degree and found below attributes. As we had taken more than 2000 reviews, we can see it is a good representation of the population.
+                                    
+
+From our text mining exercise, along with the survey responses, we see OnePlus garnering majorly good reviews on battery and hence expect it to capture further market share.
+ 
