@@ -1,0 +1,41 @@
+Blogs for inferential Statistics
+
+Sharing few blogs for Inferential Statistics
+
+Sampling techniques
+https://www.statisticssolutions.com/sample-size-calculation-and-sample-size-justification/sampling/
+https://towardsdatascience.com/sampling-techniques-a4e34111d808
+https://medium.com/analytics-vidhya/survey-and-sampling-f95110783a11#:~:text=The%20key%20benefit%20of%20probability,potential%20advantages%20%E2%80%94%20convenience%20and%20cost.
+
+**Central Limit theorem **
+
+https://www.statisticshowto.com/probability-and-statistics/normal-distributions/central-limit-theorem-definition-examples/
+https://towardsdatascience.com/the-central-limit-theorem-and-its-implications-4a7adac9d6de
+https://towardsdatascience.com/gamma-distribution-intuition-derivation-and-examples-55f407423840
+
+Hypothesis Tests Cheatsheet
+https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/
+
+"Hypothesis Testing using Python in Machine Learning
+https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce
+https://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/
+https://medium.com/analytics-vidhya/a-beginners-guide-to-hypothesis-testing-f34d6332c1cc
+https://towardsdatascience.com/everything-you-need-to-know-about-hypothesis-testing-part-i-4de9abebbc8a
+
+ANOVA for Machine learning and Data Science
+https://towardsdatascience.com/anova-for-feature-selection-in-machine-learning-d9305e228476
+https://towardsdatascience.com/tagged/anova
+https://medium.com/data-science-in-your-pocket/anova-mathematics-explained-c85a36172ac1
+https://www.scribbr.com/statistics/two-way-anova/
+https://courses.lumenlearning.com/suny-natural-resources-biometrics/chapter/chapter-6-two-way-analysis-of-variance/
+
+Chi-Square Test for Machine Learning
+https://machinelearningmastery.com/chi-squared-test-for-machine-learning/
+https://towardsdatascience.com/chi-square-test-for-feature-selection-in-machine-learning-206b1f0b8223
+https://medium.com/statistical-guess/chi-square-goodness-of-fit-test-42891f42c889
+https://medium.com/@nhan.tran/the-chi-square-statistic-p-1-37a8eb2f27bb
+https://medium.com/wenyi-yan/a-simple-explanation-to-understand-chi-square-test-1814fa261499
+
+Statistical Test in Machine learning (z Test)
+https://towardsdatascience.com/statistical-tests-when-to-use-which-704557554740
+https://medium.com/@sbjeetmeet11/hypothesis-testing-i-introduction-using-z-tests-2a95e7cdae09
